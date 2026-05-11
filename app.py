@@ -744,7 +744,7 @@ with tab4:
                 color=df['Score'],
                 colorscale=[[0, '#ff3366'], [0.5, '#ffaa00'], [1, '#00ff88']],
                 showscale=True,
-                colorbar=dict(title='Score', titlefont=dict(family='JetBrains Mono')),
+                colorbar=dict(title=dict(text='Score', font=dict(family='JetBrains Mono'))),
                 line=dict(color='#0a0e1a', width=1),
                 opacity=0.85
             ),
