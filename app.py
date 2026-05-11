@@ -452,8 +452,8 @@ with tab1:
             'vs SPY': '{:+.2f}',
             'From 52W High': '{:.2f}%',
             'Vol Ratio': '{:.2f}x',
-        }).applymap(color_score, subset=['Score']) \
-          .applymap(color_pct, subset=['1W%', '1M%', '3M%', '6M%', 'vs SPY'])
+        }).map(color_score, subset=['Score']) \
+          .map(color_pct, subset=['1W%', '1M%', '3M%', '6M%', 'vs SPY'])
         
         st.dataframe(styled, use_container_width=True, height=600, hide_index=True)
         
@@ -565,7 +565,7 @@ with tab2:
                         'vs SPY': '{:+.2f}',
                         'Vol Ratio': '{:.2f}x',
                         'From High': '{:.2f}%',
-                    }).applymap(
+                    }).map(
                         lambda v: 'background-color: #00ff8822; color: #00ff88; font-weight: 700' if v >= 75
                         else ('background-color: #ffaa0022; color: #ffaa00' if v >= 50 else 'background-color: #ff336622; color: #ff3366'),
                         subset=['Score']
@@ -689,7 +689,7 @@ with tab3:
                             'vs SPY': '{:+.2f}',
                             'From 52W': '{:.2f}%',
                             'Vol 5/60': '{:.2f}x',
-                        }).applymap(
+                        }).map(
                             lambda v: 'background-color: #00ff8822; color: #00ff88; font-weight: 700',
                             subset=['Score']
                         )
@@ -715,7 +715,7 @@ with tab3:
                         'vs SPY': '{:+.2f}',
                         'From 52W': '{:.2f}%',
                         'Vol 5/60': '{:.2f}x',
-                    }).applymap(
+                    }).map(
                         lambda v: 'background-color: #00ff8822; color: #00ff88; font-weight: 700' if v >= 75
                         else ('background-color: #ffaa0022; color: #ffaa00' if v >= 50 else ''),
                         subset=['Score']
